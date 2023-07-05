@@ -1,6 +1,7 @@
 import { HttpException, HttpStatus } from '@nestjs/common';
 import { randomUUID } from 'crypto';
 
+// Descontinuado, pois estamos usando a class criada pelo Prisma
 export class User {
   constructor(
     private _name: string,
