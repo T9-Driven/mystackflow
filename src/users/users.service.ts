@@ -12,7 +12,10 @@ export class UsersService {
     const user = await this.usersRepository.findUserByEmail(data.email);
     if (user)
       throw new HttpException('User already exists', HttpStatus.CONFLICT);
-    await this.usersRepository.addUser({ ...data, password: hashPassword });
+    return await this.usersRepository.addUser({
+      ...data,
+      password: hashPassword,
+    });
   }
 
   async findAllUsers() {
